@@ -1,5 +1,3 @@
-//webpack merges all the javascript files into a single file
-
 const path = require("path");
 const webpack = require("webpack");
 

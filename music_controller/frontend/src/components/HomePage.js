@@ -62,6 +62,10 @@ export default class HomePage extends Component {
     this.state = {
       roomCode: null,
     };
+<<<<<<< HEAD
+=======
+    this.clearRoomCode = this.clearRoomCode.bind(this);
+>>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
   }
 
   async componentDidMount() {

@@ -2,6 +2,7 @@ from django.db import models
 import string
 import random
 
+
 def generate_unique_code():
     length = 6
 

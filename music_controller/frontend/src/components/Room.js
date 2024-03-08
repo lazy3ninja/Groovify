@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import React, { useState, useEffect } from "react";
 // import { Grid, Button, Typography } from "@material-ui/core";
 // import { useParams, useNavigate } from "react-router-dom";
@@ -95,27 +94,15 @@
 import React, { useState, useEffect } from "react";
 import { Grid, Button, Typography } from "@material-ui/core";
 import CreateRoomPage from "./CreateRoomPage";
-import { useParams, useHistory, navigate } from "react-router-dom";
+import { useParams, navigate } from "react-router-dom";
 
 const Room = ({ leaveRoomCallback }) => {
   const { roomCode } = useParams();
   const [roomDetails, setRoomDetails] = useState({
-=======
-import React, { useState, useEffect } from "react";
-import { Grid, Button, Typography } from "@material-ui/core";
-import { useParams, useNavigate } from "react-router-dom";
-
-export default function Room() {
-  const { roomCode } = useParams();
-  const navigate = useNavigate();
-
-  const [state, setState] = useState({
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
     votesToSkip: 2,
     guestCanPause: false,
     isHost: false,
   });
-<<<<<<< HEAD
   const [showSettings, setShowSettings] = useState(false);
 
   const getRoomDetails = async () => {
@@ -123,33 +110,17 @@ export default function Room() {
       const response = await fetch(`/api/get-room?code=${roomCode}`);
       if (!response.ok) {
         leaveRoomCallback();
-=======
-
-  useEffect(() => {
-    getRoomDetails();
-  }, []);
-
-  const getRoomDetails = async () => {
-    try {
-      const response = await fetch("/api/get-room" + "?code=" + roomCode);
-      if (!response.ok) {
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
         navigate("/");
         return;
       }
       const data = await response.json();
-<<<<<<< HEAD
       setRoomDetails({
-=======
-      setState({
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
         votesToSkip: data.votes_to_skip,
         guestCanPause: data.guest_can_pause,
         isHost: data.is_host,
       });
     } catch (error) {
       console.error("Error fetching room details:", error);
-<<<<<<< HEAD
     }
   };
 
@@ -158,18 +129,10 @@ export default function Room() {
   }, [roomCode, leaveRoomCallback]);
 
   const leaveButtonPressed = () => {
-=======
-      // Handle error
-    }
-  };
-
-  const leaveButtonPressed = async () => {
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     };
-<<<<<<< HEAD
     fetch("/api/leave-room", requestOptions).then((_response) => {
       leaveRoomCallback();
       navigate("/");
@@ -222,24 +185,6 @@ export default function Room() {
   if (showSettings) {
     return renderSettings();
   }
-=======
-    try {
-      console.log("Leaving room...");
-      const response = await fetch("/api/leave-room", requestOptions);
-      if (response.ok) {
-        console.log("Left room successfully");
-        navigate("/");
-      } else {
-        console.error("Failed to leave room. Server response:", response);
-        // Handle error
-      }
-    } catch (error) {
-      console.error("Error leaving room:", error);
-      // Handle error
-    }
-  };
-  
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
 
   return (
     <Grid container spacing={1}>
@@ -250,34 +195,20 @@ export default function Room() {
       </Grid>
       <Grid item xs={12} align="center">
         <Typography variant="h6" component="h6">
-<<<<<<< HEAD
           Votes: {roomDetails.votesToSkip}
-=======
-          Votes: {state.votesToSkip}
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
         </Typography>
       </Grid>
       <Grid item xs={12} align="center">
         <Typography variant="h6" component="h6">
-<<<<<<< HEAD
           Guest Can Pause: {roomDetails.guestCanPause.toString()}
-=======
-          Guest Can Pause: {state.guestCanPause.toString()}
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
         </Typography>
       </Grid>
       <Grid item xs={12} align="center">
         <Typography variant="h6" component="h6">
-<<<<<<< HEAD
           Host: {roomDetails.isHost.toString()}
         </Typography>
       </Grid>
       {roomDetails.isHost ? renderSettingsButton() : null}
-=======
-          Host: {state.isHost.toString()}
-        </Typography>
-      </Grid>
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
       <Grid item xs={12} align="center">
         <Button
           variant="contained"
@@ -289,12 +220,8 @@ export default function Room() {
       </Grid>
     </Grid>
   );
-<<<<<<< HEAD
 };
 
 export default Room;
 
 
-=======
-}
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e

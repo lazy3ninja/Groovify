@@ -8,16 +8,11 @@ export default class App extends Component {
     super(props);
   }
 
-<<<<<<< HEAD
     render() {
         return (
         <div className= "center">
-=======
-  render() {
-    return (
-      <div className="center">
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e
         <HomePage />
+        
       </div>
     );
   }

@@ -76,8 +76,4 @@ class RoomJoinPage extends Component{
         });
     }
 }
-<<<<<<< HEAD
 export default withRouter(RoomJoinPage);
-=======
-export default withRouter(RoomJoinPage);
->>>>>>> c4d18f6911e186bc88bb67b3158065dff18b1c8e

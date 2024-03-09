@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('',include('frontend.urls')),
-    
+    path('spotify/',include('spotify.urls')),
 ]
 
 #suppose we type domain.com/helloxyz then helloxyz will be sent here and this file will dispatch it to the respective app

@@ -1,4 +1,7 @@
 from django.db import models
+#models help in managing database of our website using python code
+# Create your models here.
+
 import string
 import random
 

@@ -106,7 +106,7 @@ class UserInRoom(APIView):
 class LeaveRoom(APIView):
     def post(self, request, format = None):
         if 'room_code' in self.request.session:
-
+             
             code = self.request.session.pop('room_code')
             host_id = self.request.session.session_key
             room_results = Room.objects.filter(host = host_id)
